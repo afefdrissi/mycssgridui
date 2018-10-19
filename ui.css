@@ -1,3 +1,7 @@
+.delete:after {
+  content: url(assets/delete.png);
+}
+
 body {
   font-family: helvetica;
   margin: 0;
@@ -12,16 +16,34 @@ body {
       grid-template-areas: "div main" "aside main";
 }
 
+@media only screen and (max-width: 768px) {
+  body {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    -ms-grid-rows: 80px auto;
+        grid-template-rows: 80px auto;
+        grid-template-areas: "div" "main";
+  }
+}
+
 body > div {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: div;
-  background-color: #f44336;
+  background-color: #36e4f4;
   text-align: center;
   padding-top: 20px;
   color: white;
   font-size: 22pt;
   font-weight: bold;
+}
+
+@media only screen and (max-width: 1024px) {
+  body > div {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: div;
+  }
 }
 
 body aside {
@@ -30,6 +52,12 @@ body aside {
   grid-area: aside;
   background-color: #2D3538;
   color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  body aside {
+    display: none;
+  }
 }
 
 body aside ul {
@@ -78,6 +106,15 @@ body main {
       grid-template-areas: "header " "list ";
 }
 
+@media only screen and (max-width: 1024px) {
+  body main {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    grid-area: main;
+  }
+}
+
 body main .header {
   margin: 0px 24px 0px 24px;
   -ms-grid-row: 1;
@@ -111,7 +148,7 @@ body main .header > a {
   font-size: 18px;
   text-decoration: none;
   color: #fff;
-  background-color: #f44336;
+  background-color: #ffc14d;
   padding: 10px 24px 10px 24px;
   -ms-grid-column-align: end;
       justify-self: end;

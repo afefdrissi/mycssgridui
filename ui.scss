@@ -1,3 +1,5 @@
+@import 'toimport';
+
 body{
     font-family: helvetica;
     margin: 0;
@@ -8,9 +10,18 @@ body{
     grid-template-rows: 80px auto;
     grid-template-areas: "div main"
     "aside main";
+    @include mq('tablet') {
+        grid-template-columns: auto;
+        grid-template-rows: 80px auto;
+        grid-template-areas: "div" "main";
+    }
      >div{
+@include mq('tablet-wide') {
+    grid-area: div;
+}
+
         grid-area: div;
-        background-color:#f44336;
+        background-color:#36e4f4;
         text-align: center;
         padding-top:20px;
         color:white;
@@ -18,6 +29,10 @@ body{
         font-weight: bold;
      }
      aside{
+@include mq('tablet') {
+    display:none;
+}
+        
         grid-area: aside;
         background-color:#2D3538;
         color: white;
@@ -49,6 +64,9 @@ body{
         }
      }
      main{
+@include mq('tablet-wide') {
+
+    grid-area: main; }
         grid-area: main;
         background: white;
         display: grid;
@@ -79,7 +97,7 @@ body{
             font-size: 18px;
             text-decoration:none;
             color: #fff;
-            background-color:#f44336;
+            background-color:#ffc14d;
             padding:10px 24px 10px 24px;
             justify-self: end;
             align-self: center;    
