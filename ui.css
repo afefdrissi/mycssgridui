@@ -1,5 +1,17 @@
+.delete {
+  cursor: pointer;
+}
+
 .delete:after {
   content: url(assets/delete.png);
+}
+
+.checked {
+  background: #00bfad;
+}
+
+.checked:hover {
+  background: #009688 !important;
 }
 
 body {
@@ -142,6 +154,9 @@ body main .header > div {
 }
 
 body main .header > a {
+  border: 1px solid #ffc14d;
+  -webkit-box-shadow: inset 0px 1px 1px 0px #fce2c1;
+          box-shadow: inset 0px 1px 1px 0px #fce2c1;
   -ms-grid-row: 1;
   -ms-grid-column: 7;
   grid-area: button;

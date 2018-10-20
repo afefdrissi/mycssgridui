@@ -21,10 +21,17 @@ $breakpoints: (
     }
 }
 .delete{
-    
+    cursor: pointer;
 
     &:after{
 
+
 content: url(assets/delete.png);
 }
+}
+.checked{
+    background: #00bfad;
+    &:hover{
+    background: #009688!important;
+    }
 }
